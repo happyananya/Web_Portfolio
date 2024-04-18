@@ -328,6 +328,7 @@ article{
 
 article .icon{
     cursor: default;
+    vertical-align: middle;
 }
 
 #projects{
