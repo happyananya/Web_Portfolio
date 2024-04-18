@@ -319,16 +319,20 @@ section{
     justify-content: space-around;
 }
 
-article{
+article {
     display: flex;
+    align-items: center; /* Align items vertically */
     width: 10rem;
-    justify-content: space-around;
     gap: 0.5rem;
 }
 
-article .icon{
+article .icon {
     cursor: default;
-    vertical-align: middle;
+}
+
+/* Adjust checkbox alignment */
+article input[type="checkbox"] {
+    margin-right: 0.5rem; /* Add space between checkbox and other content */
 }
 
 #projects{
