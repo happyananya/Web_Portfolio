@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import profilePhoto from "../../assets/IMG_0127.jpeg";
 
 function Hero() {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ function Hero() {
       >
         <img
           className="section__pic-img"
-          src={profilePhoto}
+            src="/assets/IMG_0127.jpeg"
           alt="Ananya Agarwal profile picture"
         />
       </motion.div>
