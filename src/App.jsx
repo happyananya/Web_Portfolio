@@ -25,17 +25,21 @@ function App() {
   const toggleTheme = () => setDarkMode((prev) => !prev);
 
   return (
-    <>
+    <div className="app-layout">
       <Navbar darkMode={darkMode} onToggleTheme={toggleTheme} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/skills" element={<SkillsPage darkMode={darkMode} />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
+      <main className="app-main">
+        <div className="app-main-inner">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/skills" element={<SkillsPage darkMode={darkMode} />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </div>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -67,25 +67,56 @@
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
 #root{
     position: relative;
     z-index: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nav + scrollable main + footer at end of layout (no fixed bar, no stretched sections) */
+.app-layout{
+    flex: 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+}
+
+.app-main{
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.app-main-inner{
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 body{
     font-family: var(--font-body);
     font-size: 1.25rem;
     line-height: 1.45;
+    min-height: 100%;
     background-color: var(--bg-primary);
     background-image:
         repeating-linear-gradient(90deg, transparent, transparent 7px, var(--pixel-grid-a) 7px, var(--pixel-grid-a) 8px),
         repeating-linear-gradient(0deg, transparent, transparent 7px, var(--pixel-grid-b) 7px, var(--pixel-grid-b) 8px);
     color: var(--text-primary);
     transition: background-color 0.35s ease, color 0.35s ease;
-}
-
-html{
-    scroll-behavior: smooth;
 }
 
 p{
@@ -117,6 +148,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     height: 10vh;
+    flex-shrink: 0;
     border-bottom: 4px solid var(--border-dark);
     background: var(--bg-secondary);
     position: relative;
@@ -1022,9 +1054,9 @@ article input[type="checkbox"] {
 
 #contact{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    height: 70vh;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .contact-info-upper-container{
@@ -1064,6 +1096,7 @@ article input[type="checkbox"] {
 }
 
 footer{
+    flex-shrink: 0;
     height: auto;
     padding: 2rem 1rem;
     margin: 0 1rem;
