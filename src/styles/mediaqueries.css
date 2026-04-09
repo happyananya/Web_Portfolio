@@ -1,0 +1,154 @@
+@media screen and (max-width: 1400px){
+    #profile{
+        height: 83vh;
+        margin-bottom: 6rem;
+    }
+    .about-containers{
+        flex-wrap: wrap;
+    }
+    .flip-card{
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #desktop-nav{
+        display:none;
+    }
+    #hamburger-nav{
+        display:flex;
+    }
+    #experience, .experience-details-container{
+        margin-top: 2rem;
+    }
+    #profile, .section-container{
+        display: block;
+    }
+    section, .section-container{
+        height: fit-content;
+    }
+    section{
+        margin: 0 5%;
+    }
+    .section__pic-container{
+        max-width: min(275px, 100%);
+        width: fit-content;
+        margin: 0 auto 2rem;
+    }
+    .section__pic-img{
+        max-width: min(275px, 100%);
+    }
+    .about-containers{
+        margin-top: 0;
+    }
+    .htl-item{
+        flex: 0 0 300px;
+    }
+    .flip-card{
+        flex: 1 1 calc(50% - 2rem);
+    }
+    .skills-cards-grid{
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media screen and (max-width: 600px){
+    #contact, footer{
+        height: 40vh;
+    }
+    #profile{
+        height: 83vh;
+        margin-bottom: 0;
+    }
+    article{
+        font-size: 1rem;
+    }
+    footer nav{
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
+    .bento-grid{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "edu1"
+            "edu2"
+            "exp"
+            "cert"
+            "stats";
+    }
+    .bento-stats{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .bento-stat-value{
+        font-size: 1.5rem;
+    }
+    .about-containers,
+    .contact-info-upper-container,
+    .btn-container{
+        flex-wrap: wrap;
+    }
+    .contact-info-container{
+        margin: 0;
+    }
+    .contact-info-container p, .nav-links li a{
+        font-size: 1rem;
+    }
+    .experience-sub-title{
+        font-size: 1.25rem;
+    }
+    .logo{
+        font-size: 1.5rem;
+    }
+    .nav-links{
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    .section__pic-container{
+        max-width: min(300px, 85vw);
+        width: fit-content;
+        margin: 0 auto 2rem;
+    }
+    .section__pic-img{
+        max-width: min(300px, 85vw);
+    }
+    .section__text__p2{
+        font-size: 1rem;
+    }
+    .title{
+        font-size: 1.5rem;
+    }
+    .text-container{
+        text-align: justify;
+    }
+    .htl-item{
+        flex: 0 0 280px;
+    }
+    .htl-card{
+        padding: 1rem;
+    }
+    .htl-card-company{
+        font-size: 0.9rem;
+    }
+    .htl-card-bullets li{
+        font-size: 0.72rem;
+    }
+    .htl-arrow{
+        display: none;
+    }
+    .flip-card{
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    .skills-cards-grid{
+        grid-template-columns: 1fr;
+    }
+    .skill-pill{
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+    .wave-divider svg{
+        height: 40px;
+    }
+}

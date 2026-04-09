@@ -1,0 +1,96 @@
+import React from "react";
+import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
+
+const categoryColors = {
+  Languages: { light: "#2a8f6f", dark: "#58e6a6" },
+  "AI & Machine Learning": { light: "#c73e1d", dark: "#ff8a7a" },
+  "ML & LLM Systems": { light: "#6b3bbd", dark: "#b388ff" },
+  "Full-Stack & Data": { light: "#1a7a5e", dark: "#4dffc4" },
+  "Cloud & DevOps": { light: "#b86b00", dark: "#ffd24a" },
+};
+
+const categoryIcons = {
+  Languages: "\u{1F4BB}",
+  "AI & Machine Learning": "\u{1F9E0}",
+  "ML & LLM Systems": "\u2699\uFE0F",
+  "Full-Stack & Data": "\u{1F310}",
+  "Cloud & DevOps": "\u2601\uFE0F",
+};
+
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["Python", "JavaScript/TypeScript", "SQL (PostgreSQL)", "C/C++", "Java", "HTML/CSS", "Node.js"],
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: ["PyTorch", "TensorFlow", "HuggingFace", "YOLOv8", "OpenCV", "Scikit-learn"],
+  },
+  {
+    title: "ML & LLM Systems",
+    skills: ["Prompt Engineering", "RAG", "Model Evaluation", "Incremental Learning", "CNN", "Vision Transformers (ViT)", "NLP"],
+  },
+  {
+    title: "Full-Stack & Data",
+    skills: ["React", "Angular", "Django", "FastAPI", "Firebase", "D3.js", "Fabric.js", "Pandas", "NumPy"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS", "CI/CD (Travis CI)", "Git", "Linux", "Docker"],
+  },
+];
+
+function SkillConstellation({ darkMode }) {
+  return (
+    <section id="skills">
+      <ScrollReveal>
+        <p className="section__text__p1">Explore My</p>
+        <h1 className="title">Skills</h1>
+      </ScrollReveal>
+      <div className="skills-cards-grid">
+        {skillCategories.map((category, index) => {
+          const colors = categoryColors[category.title];
+          const accentColor = darkMode ? colors.dark : colors.light;
+          const icon = categoryIcons[category.title];
+
+          return (
+            <motion.div
+              className="skill-category-card"
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <div className="skill-category-header">
+                <span className="skill-category-icon">{icon}</span>
+                <h3 className="skill-category-title">{category.title}</h3>
+                <div
+                  className="skill-category-accent"
+                  style={{ backgroundColor: accentColor }}
+                />
+              </div>
+              <div className="skill-pills">
+                {category.skills.map((skill) => (
+                  <span
+                    className="skill-pill"
+                    key={skill}
+                    style={{
+                      borderColor: accentColor,
+                      color: accentColor,
+                    }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+export default SkillConstellation;
