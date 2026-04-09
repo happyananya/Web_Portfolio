@@ -31,7 +31,7 @@ function Hero() {
         <div className="btn-container">
           <button
             className="btn btn-color-2"
-            onClick={() => window.open("/assets/Ananya_Agarwal_Resume.pdf")}
+            onClick={() => window.open("/assets/master_ananya_agarwal_resume.pdf")}
           >
             Download CV
           </button>
