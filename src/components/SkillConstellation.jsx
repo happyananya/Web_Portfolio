@@ -68,6 +68,7 @@ function SkillConstellation({ darkMode }) {
                     style={{
                       borderColor: accentColor,
                       color: accentColor,
+                      "--pill-accent": accentColor,
                     }}
                   >
                     {skill}

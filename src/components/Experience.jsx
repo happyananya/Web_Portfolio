@@ -88,42 +88,38 @@ function Experience() {
         </button>
 
         <div className="htl-track" ref={scrollRef}>
-          {/* Horizontal line */}
-          <div className="htl-line" />
+          <div className="htl-track-scroll">
+            <div className="htl-line" aria-hidden="true" />
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              className="htl-item"
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {/* Dot on the line */}
-              <div className="htl-dot" style={{ background: exp.color }} />
-
-              {/* Period label above the line */}
-              <span className="htl-period">{exp.period}</span>
-
-              {/* Card below the line */}
+            {experiences.map((exp, index) => (
               <motion.div
-                className="htl-card"
-                whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
-                transition={{ duration: 0.25 }}
+                className="htl-item"
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="htl-card-accent" style={{ background: exp.color }} />
-                <h3 className="htl-card-company">{exp.company}</h3>
-                <p className="htl-card-role">{exp.role}</p>
-                <p className="htl-card-location">{exp.location}</p>
-                <ul className="htl-card-bullets">
-                  {exp.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
+                <div className="htl-dot" style={{ background: exp.color }} />
+                <span className="htl-period">{exp.period}</span>
+                <motion.div
+                  className="htl-card"
+                  whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="htl-card-accent" style={{ background: exp.color }} />
+                  <h3 className="htl-card-company">{exp.company}</h3>
+                  <p className="htl-card-role">{exp.role}</p>
+                  <p className="htl-card-location">{exp.location}</p>
+                  <ul className="htl-card-bullets">
+                    {exp.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <button className="htl-arrow htl-arrow-right" onClick={() => scroll(1)} aria-label="Scroll right">

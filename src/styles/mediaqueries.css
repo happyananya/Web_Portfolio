@@ -74,8 +74,7 @@
             "stats";
     }
     .bento-stats{
-        flex-wrap: wrap;
-        gap: 1rem;
+        gap: 1.25rem;
     }
     .bento-stat-value{
         font-size: 1.5rem;

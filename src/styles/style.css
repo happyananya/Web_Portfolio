@@ -151,8 +151,9 @@ nav{
     flex-shrink: 0;
     border-bottom: 4px solid var(--border-dark);
     background: var(--bg-secondary);
-    position: relative;
-    z-index: 2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-links{
@@ -559,8 +560,10 @@ section{
 
 .bento-stats{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
     height: 100%;
     padding: 0.5rem 0;
 }
@@ -629,8 +632,6 @@ section{
 }
 
 .htl-track{
-    display: flex;
-    gap: 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 2rem;
@@ -644,6 +645,15 @@ section{
     display: none;
 }
 
+/* Inner row is as wide as all cards so the line spans the full scroll width */
+.htl-track-scroll{
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    width: max-content;
+    min-width: 100%;
+}
+
 .htl-line{
     position: absolute;
     top: 2.85rem;
@@ -654,6 +664,7 @@ section{
     opacity: 0.45;
     transition: opacity 0.35s ease, background-color 0.35s ease;
     pointer-events: none;
+    z-index: 0;
 }
 
 .htl-item{
@@ -664,6 +675,7 @@ section{
     align-items: center;
     position: relative;
     padding-top: 1.5rem;
+    z-index: 1;
 }
 
 .htl-dot{
@@ -872,8 +884,9 @@ section{
 }
 
 .skill-pill:hover{
-    background: currentColor;
-    color: var(--bg-card) !important;
+    /* Use accent for fill, not currentColor (would match light --bg-card text and vanish in light mode) */
+    background: var(--pill-accent);
+    color: var(--btn-text) !important;
 }
 
 .skills-grid{
