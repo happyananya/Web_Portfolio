@@ -313,6 +313,16 @@ section{
     padding-bottom: 4vh;
 }
 
+/* Anchor scroll targets sit below sticky nav */
+#profile,
+#about,
+#experience,
+#skills,
+#projects,
+#contact{
+    scroll-margin-top: calc(10vh + 8px);
+}
+
 .section-container{
     display: flex;
 }

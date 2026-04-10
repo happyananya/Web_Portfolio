@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
 function Navbar({ darkMode, onToggleTheme }) {
@@ -16,23 +15,25 @@ function Navbar({ darkMode, onToggleTheme }) {
   return (
     <>
       <nav id="desktop-nav">
-        <Link to="/" className="logo">Ananya Agarwal</Link>
+        <a href="#profile" className="logo">
+          Ananya Agarwal
+        </a>
         <div>
           <ul className="nav-links">
             <li>
-              <Link to="/">About</Link>
+              <a href="#about">About</a>
             </li>
             <li>
-              <Link to="/experience">Experience</Link>
+              <a href="#experience">Experience</a>
             </li>
             <li>
-              <Link to="/skills">Skills</Link>
+              <a href="#skills">Skills</a>
             </li>
             <li>
-              <Link to="/projects">Projects</Link>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <a href="#contact">Contact</a>
             </li>
             <li>
               <ThemeToggle darkMode={darkMode} onToggle={onToggleTheme} />
@@ -42,7 +43,9 @@ function Navbar({ darkMode, onToggleTheme }) {
       </nav>
 
       <nav id="hamburger-nav">
-        <Link to="/" className="logo">Ananya Agarwal</Link>
+        <a href="#profile" className="logo">
+          Ananya Agarwal
+        </a>
         <div className="nav-right">
           <ThemeToggle darkMode={darkMode} onToggle={onToggleTheme} />
           <div className="hamburger-menu">
@@ -56,29 +59,29 @@ function Navbar({ darkMode, onToggleTheme }) {
             </div>
             <div className={`menu-links ${menuOpen ? "open" : ""}`}>
               <li>
-                <Link to="/" onClick={closeMenu}>
+                <a href="#about" onClick={closeMenu}>
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/experience" onClick={closeMenu}>
+                <a href="#experience" onClick={closeMenu}>
                   Experience
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/skills" onClick={closeMenu}>
+                <a href="#skills" onClick={closeMenu}>
                   Skills
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/projects" onClick={closeMenu}>
+                <a href="#projects" onClick={closeMenu}>
                   Projects
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/contact" onClick={closeMenu}>
+                <a href="#contact" onClick={closeMenu}>
                   Contact
-                </Link>
+                </a>
               </li>
             </div>
           </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 function Hero() {
-  const navigate = useNavigate();
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="profile">
@@ -37,7 +38,7 @@ function Hero() {
           </button>
           <button
             className="btn btn-color-1"
-            onClick={() => navigate("/contact")}
+            onClick={scrollToContact}
           >
             Contact
           </button>
