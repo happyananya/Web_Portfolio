@@ -16,6 +16,26 @@ const categoryIcons = {
   "Cloud & DevOps": "\u2601\uFE0F",
 };
 
+/** Shown first: what recruiters should assume you ship with day-to-day. */
+const CORE_STACK = [
+  "Python",
+  "JavaScript/TypeScript",
+  "SQL (PostgreSQL)",
+  "React",
+  "PyTorch",
+  "AWS",
+];
+
+/** Exact matches to category `skills` strings get stronger pill styling. */
+const PRIMARY_SKILL_LABELS = new Set([
+  "Python",
+  "JavaScript/TypeScript",
+  "SQL (PostgreSQL)",
+  "React",
+  "PyTorch",
+  "AWS",
+]);
+
 const skillCategories = [
   {
     title: "Languages",
@@ -44,6 +64,22 @@ function SkillConstellation({ darkMode }) {
     <section id="skills">
       <p className="section__text__p1">Explore My</p>
       <h1 className="title">Skills</h1>
+      <p className="skills-intro">
+        Core stack below reflects where I have the most shipping experience; other
+        tools are grouped by area.
+      </p>
+      <div className="skills-core" aria-label="Core technical stack">
+        <div className="skills-core-panel">
+          <span className="skills-core-label">Core stack</span>
+          <div className="skills-core-pills">
+            {CORE_STACK.map((skill) => (
+              <span className="skill-pill skill-pill--core" key={skill}>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="skills-cards-grid">
         {skillCategories.map((category) => {
           const colors = categoryColors[category.title];
@@ -63,7 +99,7 @@ function SkillConstellation({ darkMode }) {
               <div className="skill-pills">
                 {category.skills.map((skill) => (
                   <span
-                    className="skill-pill"
+                    className={`skill-pill${PRIMARY_SKILL_LABELS.has(skill) ? " skill-pill--primary" : ""}`}
                     key={skill}
                     style={{
                       borderColor: accentColor,

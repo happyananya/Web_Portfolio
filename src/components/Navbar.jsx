@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { RESUME_PDF_HREF } from "../constants";
 
 function Navbar({ darkMode, onToggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,6 +37,11 @@ function Navbar({ darkMode, onToggleTheme }) {
               <a href="#contact">Contact</a>
             </li>
             <li>
+              <a href={RESUME_PDF_HREF} target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
+            </li>
+            <li>
               <ThemeToggle darkMode={darkMode} onToggle={onToggleTheme} />
             </li>
           </ul>
@@ -57,7 +63,7 @@ function Navbar({ darkMode, onToggleTheme }) {
               <span></span>
               <span></span>
             </div>
-            <div className={`menu-links ${menuOpen ? "open" : ""}`}>
+            <ul className={`menu-links ${menuOpen ? "open" : ""}`}>
               <li>
                 <a href="#about" onClick={closeMenu}>
                   About
@@ -83,7 +89,17 @@ function Navbar({ darkMode, onToggleTheme }) {
                   Contact
                 </a>
               </li>
-            </div>
+              <li>
+                <a
+                  href={RESUME_PDF_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                >
+                  Resume
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

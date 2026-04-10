@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { RESUME_PDF_HREF } from "../constants";
 
 function Hero() {
   const scrollToContact = () => {
@@ -30,39 +31,41 @@ function Hero() {
         <h1 className="title">Ananya Agarwal</h1>
         <p className="section__text__p2">M.S. Computer Science @ NYU</p>
         <p className="section__text__tagline">
-          Building scalable AI systems and full-stack applications
+          Building reliable systems: full-stack apps, data
+          pipelines, and evaluation-driven ML
         </p>
         <div className="btn-container">
-          <button
+          <a
             className="btn btn-color-2"
-            onClick={() => window.open("/assets/master_ananya_agarwal_resume.pdf")}
+            href={RESUME_PDF_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Download CV
-          </button>
-          <button
-            className="btn btn-color-1"
-            onClick={scrollToContact}
-          >
+          </a>
+          <button type="button" className="btn btn-color-1" onClick={scrollToContact}>
             Contact
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="/assets/linkedin.png"
-            alt="My LinkedIn Profile"
-            className="icon"
-            onClick={() => {
-              window.location.href = "https://www.linkedin.com/in/ananya-agarwal03/";
-            }}
-          />
-          <img
-            src="/assets/github.png"
-            alt="My Github Profile"
-            className="icon"
-            onClick={() => {
-              window.location.href = "https://github.com/happyananya";
-            }}
-          />
+          <a
+            href="https://www.linkedin.com/in/ananya-agarwal03/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Ananya Agarwal on LinkedIn"
+          >
+            <img src="/assets/linkedin.png" alt="" className="icon" width={32} height={32} />
+          </a>
+          <a
+            href="https://github.com/happyananya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+            aria-label="Ananya Agarwal on GitHub"
+          >
+            <img src="/assets/github.png" alt="" className="icon" width={32} height={32} />
+          </a>
         </div>
       </motion.div>
     </section>

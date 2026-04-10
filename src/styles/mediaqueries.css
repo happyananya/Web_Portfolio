@@ -44,6 +44,9 @@
     .project-card{
         flex: 1 1 calc(50% - 2rem);
     }
+    .projects-featured-grid{
+        grid-template-columns: 1fr;
+    }
     .skills-cards-grid{
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
@@ -139,6 +142,13 @@
     .project-card{
         flex: 1 1 100%;
         max-width: 100%;
+    }
+    .projects-featured-grid{
+        gap: 1.25rem;
+    }
+    .projects-more-summary{
+        flex-direction: column;
+        align-items: flex-start;
     }
     .skills-cards-grid{
         grid-template-columns: 1fr;
