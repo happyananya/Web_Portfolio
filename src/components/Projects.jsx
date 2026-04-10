@@ -88,11 +88,7 @@ function ProjectCard({ project, index }) {
 function Projects() {
   return (
     <section id="projects">
-      <p className="section__text__p1">Browse My Recent</p>
       <h1 className="title">Projects</h1>
-      <p className="projects-intro">
-        Two flagship builds below; additional work is linked on GitHub.
-      </p>
 
       <h2 className="projects-subheading">Featured</h2>
       <div className="projects-featured-grid">

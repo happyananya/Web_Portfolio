@@ -62,7 +62,6 @@ const skillCategories = [
 function SkillConstellation({ darkMode }) {
   return (
     <section id="skills">
-      <p className="section__text__p1">Explore My</p>
       <h1 className="title">Skills</h1>
       <p className="skills-intro">
         Core stack below reflects where I have the most shipping experience; other

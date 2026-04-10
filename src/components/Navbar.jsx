@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import { RESUME_PDF_HREF } from "../constants";
 
+const navBarTransition = {
+  type: "spring",
+  stiffness: 100,
+  damping: 22,
+  mass: 0.8,
+};
+
 function Navbar({ darkMode, onToggleTheme }) {
+  const reduceMotion = useReducedMotion();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,15 +24,17 @@ function Navbar({ darkMode, onToggleTheme }) {
 
   return (
     <>
-      <nav id="desktop-nav">
+      <motion.nav
+        id="desktop-nav"
+        initial={reduceMotion ? false : { y: -28, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={reduceMotion ? { duration: 0 } : navBarTransition}
+      >
         <a href="#profile" className="logo">
           Ananya Agarwal
         </a>
         <div>
           <ul className="nav-links">
-            <li>
-              <a href="#about">About</a>
-            </li>
             <li>
               <a href="#experience">Experience</a>
             </li>
@@ -46,9 +57,14 @@ function Navbar({ darkMode, onToggleTheme }) {
             </li>
           </ul>
         </div>
-      </nav>
+      </motion.nav>
 
-      <nav id="hamburger-nav">
+      <motion.nav
+        id="hamburger-nav"
+        initial={reduceMotion ? false : { y: -28, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={reduceMotion ? { duration: 0 } : navBarTransition}
+      >
         <a href="#profile" className="logo">
           Ananya Agarwal
         </a>
@@ -64,11 +80,6 @@ function Navbar({ darkMode, onToggleTheme }) {
               <span></span>
             </div>
             <ul className={`menu-links ${menuOpen ? "open" : ""}`}>
-              <li>
-                <a href="#about" onClick={closeMenu}>
-                  About
-                </a>
-              </li>
               <li>
                 <a href="#experience" onClick={closeMenu}>
                   Experience
@@ -102,7 +113,7 @@ function Navbar({ darkMode, onToggleTheme }) {
             </ul>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 }

@@ -67,7 +67,6 @@ function Experience() {
   return (
     <section id="experience">
       <ScrollReveal>
-        <p className="section__text__p1">Explore My</p>
         <h1 className="title">Experience</h1>
       </ScrollReveal>
 

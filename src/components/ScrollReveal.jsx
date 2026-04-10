@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 const variants = {
   fadeUp: {
@@ -26,14 +26,28 @@ function ScrollReveal({
   delay = 0,
   duration = 0.6,
   className = "",
+  spring = true,
 }) {
+  const reduceMotion = useReducedMotion();
+  const useSpring = spring && !reduceMotion;
+
+  const transition = useSpring
+    ? {
+        type: "spring",
+        stiffness: 85,
+        damping: 22,
+        mass: 0.85,
+        delay,
+      }
+    : { duration: reduceMotion ? 0.01 : duration, delay: reduceMotion ? 0 : delay, ease: "easeOut" };
+
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      transition={transition}
       variants={variants[variant]}
     >
       {children}
