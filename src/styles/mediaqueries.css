@@ -6,7 +6,7 @@
     .about-containers{
         flex-wrap: wrap;
     }
-    .flip-card{
+    .project-card{
         flex: 1 1 calc(50% - 2rem);
     }
 }
@@ -41,10 +41,7 @@
     .about-containers{
         margin-top: 0;
     }
-    .htl-item{
-        flex: 0 0 300px;
-    }
-    .flip-card{
+    .project-card{
         flex: 1 1 calc(50% - 2rem);
     }
     .skills-cards-grid{
@@ -112,28 +109,34 @@
     .section__text__p2{
         font-size: 1rem;
     }
+    .section__text__tagline{
+        font-size: 0.92rem;
+        max-width: 100%;
+    }
     .title{
         font-size: 1.5rem;
     }
     .text-container{
         text-align: justify;
     }
-    .htl-item{
-        flex: 0 0 280px;
+    .exp-row-body{
+        padding: 1rem 1rem 1.15rem;
     }
-    .htl-card{
-        padding: 1rem;
+    .exp-row-company{
+        font-size: 0.98rem;
     }
-    .htl-card-company{
-        font-size: 0.9rem;
+    .exp-row-bullets li{
+        font-size: 0.78rem;
     }
-    .htl-card-bullets li{
-        font-size: 0.72rem;
+    .exp-row-meta{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
     }
-    .htl-arrow{
+    .exp-row-sep{
         display: none;
     }
-    .flip-card{
+    .project-card{
         flex: 1 1 100%;
         max-width: 100%;
     }

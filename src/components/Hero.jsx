@@ -16,8 +16,8 @@ function Hero() {
       >
         <img
           className="section__pic-img"
-            src="/assets/IMG_0127.jpeg"
-          alt="Ananya Agarwal profile picture"
+          src="/assets/profile-hero.png"
+          alt="Portrait of Ananya Agarwal with the Golden Gate Bridge in the background"
         />
       </motion.div>
       <motion.div
@@ -29,6 +29,9 @@ function Hero() {
         <p className="section__text__p1">Hello, I&apos;m</p>
         <h1 className="title">Ananya Agarwal</h1>
         <p className="section__text__p2">M.S. Computer Science @ NYU</p>
+        <p className="section__text__tagline">
+          Building scalable AI systems and full-stack applications
+        </p>
         <div className="btn-container">
           <button
             className="btn btn-color-2"

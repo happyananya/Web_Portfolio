@@ -49,29 +49,23 @@ const projects = [
 function ProjectCard({ project, index }) {
   return (
     <motion.div
-      className="flip-card"
+      className="project-card"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
     >
-      <div className="flip-card-inner">
-        {/* Front */}
-        <div className="flip-card-front">
-          <h2 className="flip-card-title">{project.title}</h2>
-          <p className="flip-card-tech">{project.tech}</p>
-          <p className="flip-card-hint">Hover to see details</p>
-        </div>
-        {/* Back */}
-        <div className="flip-card-back">
-          <p className="flip-card-description">{project.description}</p>
-          <button
-            className="btn btn-color-2 project-btn"
-            onClick={() => window.open(project.link, "_blank")}
-          >
-            View Project
-          </button>
-        </div>
+      <div className="project-card-inner">
+        <h2 className="project-card-title">{project.title}</h2>
+        <p className="project-card-tech">{project.tech}</p>
+        <p className="project-card-description">{project.description}</p>
+        <button
+          type="button"
+          className="btn btn-color-2 project-btn"
+          onClick={() => window.open(project.link, "_blank")}
+        >
+          View Project
+        </button>
       </div>
     </motion.div>
   );
@@ -82,7 +76,7 @@ function Projects() {
     <section id="projects">
       <p className="section__text__p1">Browse My Recent</p>
       <h1 className="title">Projects</h1>
-      <div className="flip-cards-grid">
+      <div className="projects-grid">
         {projects.map((project, index) => (
           <ProjectCard project={project} index={index} key={index} />
         ))}
