@@ -137,7 +137,8 @@ function Hero() {
             <p className="section__text__p2">M.S. Computer Science @ NYU</p>
             <p className="section__text__tagline">
               Building reliable systems: full-stack apps, data
-              pipelines, and evaluation-driven ML
+              pipelines, and evaluation-driven ML. Looking for Summer or Fall
+              2026 internships.
             </p>
             <div className="btn-container">
               <a
